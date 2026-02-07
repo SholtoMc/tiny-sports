@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { Separator } from '@/components/ui/separator'
 
 const footerLinks = {
@@ -43,6 +43,13 @@ export function Footer() {
               >
                 <Mail className="h-4 w-4" />
                 hello@tiny-sports.org
+              </a>
+              <a
+                href="tel:+61437218197"
+                className="hover:text-foreground inline-flex items-center gap-2"
+              >
+                <Phone className="h-4 w-4" />
+                0437 218 197
               </a>
               <span className="inline-flex items-center gap-2">
                 <MapPin className="h-4 w-4" />

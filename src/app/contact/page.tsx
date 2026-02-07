@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Mail, MapPin } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { ContactForm } from '@/components/shared/contact-form'
 
 export const metadata: Metadata = {
@@ -40,6 +40,13 @@ export default function ContactPage() {
                 >
                   <Mail className="text-primary h-5 w-5" />
                   hello@tiny-sports.org
+                </a>
+                <a
+                  href="tel:+61437218197"
+                  className="text-muted-foreground hover:text-foreground flex items-center gap-3"
+                >
+                  <Phone className="text-primary h-5 w-5" />
+                  0437 218 197
                 </a>
                 <div className="text-muted-foreground flex items-center gap-3">
                   <MapPin className="text-primary h-5 w-5" />
