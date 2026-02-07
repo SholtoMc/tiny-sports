@@ -1,6 +1,9 @@
 import { config, fields, collection, singleton } from '@keystatic/core'
 
-const useGitHub = process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE_KIND === 'github'
+const useGitHub =
+  typeof window === 'undefined'
+    ? !!process.env.KEYSTATIC_GITHUB_CLIENT_ID
+    : document.location.hostname !== 'localhost'
 
 export default config({
   storage: useGitHub
