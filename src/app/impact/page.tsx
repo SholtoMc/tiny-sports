@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { TrendingUp, Users, DollarSign, MapPin } from 'lucide-react'
+import { TrendingUp, Users, MapPin } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { reader } from '@/lib/keystatic/reader'
 import { GrantCard } from '@/components/grants/grant-card'
@@ -12,14 +12,8 @@ export const metadata: Metadata = {
 
 const stats = [
   {
-    icon: DollarSign,
-    value: '$2M+',
-    label: 'Total Grants Secured',
-    description: 'Across federal, state, and local government programs',
-  },
-  {
     icon: Users,
-    value: '150+',
+    value: '5',
     label: 'Clubs Supported',
     description: 'From football to netball, cricket to swimming',
   },
@@ -60,7 +54,7 @@ export default async function ImpactPage() {
       {/* Stats */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {stats.map((stat) => (
               <Card key={stat.label}>
                 <CardContent className="pt-6 text-center">

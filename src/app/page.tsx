@@ -100,10 +100,9 @@ export default function HomePage() {
       {/* Impact stats */}
       <section className="bg-primary text-primary-foreground py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-3 gap-8">
             {[
-              { value: '$2M+', label: 'Grants Secured' },
-              { value: '150+', label: 'Clubs Supported' },
+              { value: '5', label: 'Clubs Supported' },
               { value: '85%', label: 'Success Rate' },
               { value: '6', label: 'States & Territories' },
             ].map((stat) => (
