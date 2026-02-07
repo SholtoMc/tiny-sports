@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     'Helping Australian community sports clubs with grant writing, brand development, and capacity building.',
-  metadataBase: new URL('https://tinysports.com.au'),
+  metadataBase: new URL('https://tiny-sports.org'),
 }
 
 export default function RootLayout({

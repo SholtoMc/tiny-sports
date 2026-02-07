@@ -35,11 +35,11 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold">Contact Details</h2>
               <div className="mt-6 space-y-4">
                 <a
-                  href="mailto:hello@tinysports.com.au"
+                  href="mailto:hello@tiny-sports.org"
                   className="text-muted-foreground hover:text-foreground flex items-center gap-3"
                 >
                   <Mail className="text-primary h-5 w-5" />
-                  hello@tinysports.com.au
+                  hello@tiny-sports.org
                 </a>
                 <div className="text-muted-foreground flex items-center gap-3">
                   <MapPin className="text-primary h-5 w-5" />

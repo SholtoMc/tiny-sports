@@ -1,5 +1,9 @@
 'use server'
 
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
+
 interface ContactState {
   success: boolean
   message: string
@@ -31,14 +35,22 @@ export async function submitContact(
   }
 
   try {
-    // TODO: Integrate with Resend or another email service
-    // For now, log the submission
-    console.log('Contact form submission:', {
-      name,
-      email,
-      club,
-      subject,
-      message,
+    await resend.emails.send({
+      from: 'Tiny Sports <contact@tiny-sports.org>',
+      to: 'hello@tiny-sports.org',
+      replyTo: email,
+      subject: `[Contact] ${subject}`,
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        club ? `Club: ${club}` : '',
+        `Subject: ${subject}`,
+        '',
+        'Message:',
+        message,
+      ]
+        .filter(Boolean)
+        .join('\n'),
     })
 
     return {

@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { reader } from '@/lib/keystatic/reader'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://tinysports.com.au'
+  const baseUrl = 'https://tiny-sports.org'
 
   const staticPages = [
     '',

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/keystatic/', '/api/'],
     },
-    sitemap: 'https://tinysports.com.au/sitemap.xml',
+    sitemap: 'https://tiny-sports.org/sitemap.xml',
   }
 }

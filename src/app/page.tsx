@@ -8,9 +8,9 @@ const jsonLd = {
   name: 'Tiny Sports',
   description:
     'Helping Australian community sports clubs with grant writing, brand development, and capacity building.',
-  url: 'https://tinysports.com.au',
+  url: 'https://tiny-sports.org',
   areaServed: 'Australia',
-  email: 'hello@tinysports.com.au',
+  email: 'hello@tiny-sports.org',
 }
 
 export default function HomePage() {

@@ -102,7 +102,7 @@ export default config({
         }),
         email: fields.text({
           label: 'Contact Email',
-          defaultValue: 'hello@tinysports.com.au',
+          defaultValue: 'hello@tiny-sports.org',
         }),
         phone: fields.text({
           label: 'Phone',
