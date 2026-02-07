@@ -35,30 +35,6 @@ const stats = [
   },
 ]
 
-const caseStudies = [
-  {
-    club: 'Riverside Cricket Club',
-    location: 'Regional Victoria',
-    outcome: '$75,000 Community Sport Infrastructure Grant',
-    story:
-      'Riverside needed new practice nets and lighting for their junior program. We helped them prepare a detailed application including community impact data and co-contribution planning. The new facilities increased junior membership by 40%.',
-  },
-  {
-    club: 'Northern Suburbs Netball Association',
-    location: 'Brisbane, QLD',
-    outcome: '$25,000 Active Clubs Grant + Brand Refresh',
-    story:
-      'NSNA was struggling to attract volunteers and sponsors with an outdated brand. We helped secure grant funding for a participation program while also guiding their brand refresh. Sponsorship revenue doubled within 12 months.',
-  },
-  {
-    club: 'Coastal United Football Club',
-    location: 'Central Coast, NSW',
-    outcome: 'Strategic Plan + $45,000 in Grants',
-    story:
-      "A club at risk of folding due to declining membership and poor governance. We facilitated a strategic planning workshop, rebuilt their committee structure, and secured two grants for facility upgrades and a women's football program.",
-  },
-]
-
 export default function ImpactPage() {
   return (
     <div>
@@ -99,7 +75,7 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* Case Studies */}
+      {/* TODO: Uncomment when real case studies are ready
       <section className="bg-muted/30 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-center text-3xl font-bold tracking-tight">
@@ -129,6 +105,7 @@ export default function ImpactPage() {
           </div>
         </div>
       </section>
+      */}
     </div>
   )
 }
