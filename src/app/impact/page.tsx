@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { TrendingUp, Users, DollarSign, MapPin } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
+import { reader } from '@/lib/keystatic/reader'
+import { GrantCard } from '@/components/grants/grant-card'
 
 export const metadata: Metadata = {
   title: 'Impact',
@@ -35,7 +37,9 @@ const stats = [
   },
 ]
 
-export default function ImpactPage() {
+export default async function ImpactPage() {
+  const grants = await reader.collections['grant-guides'].all()
+
   return (
     <div>
       {/* Hero */}
@@ -75,37 +79,34 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* TODO: Uncomment when real case studies are ready
-      <section className="bg-muted/30 py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight">
-            Success Stories
-          </h2>
-          <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-lg">
-            Every club has a story. Here are a few we&apos;re proud to have been
-            part of.
-          </p>
-          <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {caseStudies.map((study) => (
-              <Card key={study.club}>
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <h3 className="text-lg font-semibold">{study.club}</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {study.location}
-                    </p>
-                  </div>
-                  <p className="text-primary mb-4 text-sm font-medium">
-                    {study.outcome}
-                  </p>
-                  <p className="text-muted-foreground text-sm">{study.story}</p>
-                </CardContent>
-              </Card>
-            ))}
+      {/* Success Stories — auto-populated from grant guides */}
+      {grants.length > 0 && (
+        <section className="bg-muted/30 py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-center text-3xl font-bold tracking-tight">
+              Success Stories
+            </h2>
+            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-center text-lg">
+              Every club has a story. Here are a few we&apos;re proud to have
+              been part of.
+            </p>
+            <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {grants.map((grant) => (
+                <GrantCard
+                  key={grant.slug}
+                  slug={grant.slug}
+                  title={grant.entry.title}
+                  state={grant.entry.state}
+                  status={grant.entry.status as 'open' | 'closed' | 'upcoming'}
+                  amount={grant.entry.amount}
+                  deadline={grant.entry.deadline}
+                  excerpt={grant.entry.excerpt}
+                />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-      */}
+        </section>
+      )}
     </div>
   )
 }
