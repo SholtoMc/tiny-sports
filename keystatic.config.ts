@@ -1,9 +1,16 @@
 import { config, fields, collection, singleton } from '@keystatic/core'
 
+const useGitHub = !!process.env.KEYSTATIC_GITHUB_CLIENT_ID
+
 export default config({
-  storage: {
-    kind: 'local',
-  },
+  storage: useGitHub
+    ? {
+        kind: 'github',
+        repo: 'SholtoMc/tiny-sports',
+      }
+    : {
+        kind: 'local',
+      },
   collections: {
     posts: collection({
       label: 'Blog Posts',
